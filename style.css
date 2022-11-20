@@ -1,0 +1,21 @@
+body{
+    background-color: darkgray;
+}
+ 
+.survey{
+    font-size: 50px;
+    color: darkgreen;
+}
+
+.cover{
+    white-space: nowrap;
+    overflow-x:auto;
+}
+
+
+@media screen and (max-width: 990px) {
+    .survey-img{
+        display: none;
+    }
+
+}

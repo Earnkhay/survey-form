@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Survey form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+  <body>    
+        <div class="container">
+         <div class="row justify-content-center align-items-center">
+            <div class="col-md-6 bg-secondary rounded-2 p-3 mt-3">
+                <h1 class="text-center mb-4 fw-bolder survey">Survey Form</h1>
+
+                <form id="survey-form">
+                    <div class="mb-3">
+                        <label for="name" class="form-label fw-bold">Business Name</label>
+                        <input type="text" id="name" class="form-control" id="formGroupExampleInput" placeholder="Enter business name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label fw-bold">Business Email</label>
+                        <input type="email" id="email" class="form-control" id="formGroupExampleInput2" placeholder="Enter business email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label fw-bold">How long have you been in business?</label>
+                        <input type="number" id="number" class="form-control" id="formGroupExampleInput2" placeholder="years" name="age" min="1" max="15" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <b><p>Which option best describes your business?</p></b>
+                        <select name="role" id="dropdown" class="form-input">
+                            <b><option disabled selected value="">Select business type</option></b>
+                            <option value="Packaging">Packaging</option>
+                            <option value="Branding">Branding</option>
+                            <option value="FMCG">FMCG</option>
+                            <option value="Fashion">Fashion</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <b><p>Would you recommend my business to others?</p></b>
+                    <div id="radio" class="d-flex flex-column">
+                        <label for="">
+                            <input type="radio" value="Definitely" name="recommend" checked>
+                            Definitely
+                        </label>
+
+                        <label for="">
+                            <input type="radio" value="Maybe" name="recommend">
+                            Maybe
+                        </label>
+
+                        <label for="">
+                            <input type="radio" value="not-sure" name="recommend">
+                            Not sure
+                        </label>
+                    </div><br>
+
+                    <b><p>What would you like to see improved?</p></b>
+                    <div id="checkbox" class="d-flex flex-column">
+                        <label for="">
+                            <input type="checkbox" value="Customer Service" name="improve">
+                            Customer Service
+                        </label>
+
+                        <label for="">
+                            <input type="checkbox" value="App Features" name="improve">
+                            App Features
+                        </label>
+
+                        <label for="">
+                            <input type="checkbox" value="Dashboard Features" name="improve">
+                            Dashboard Features
+                        </label>
+
+                        <label for="">
+                            <input type="checkbox" value="Withdrawal time" name="improve">
+                            Delivery system
+                        </label>
+
+                        <label for="">
+                            <input type="checkbox" value="Partner Referral System" name="improve">
+                            Referral System
+                        </label>
+
+                        <label for="">
+                            <input type="checkbox" value="Others" name="improve">
+                            Others
+                        </label>
+                </div><br>
+
+                <div class="comment mb-2">
+                    <b><p>Any comments or suggestions?</p></b>
+                    <label for="comments">
+                        <textarea name="comment" id="comments" cols="30" rows="5"
+                        placeholder="Enter your comments here...." class="form-input"></textarea>
+                    </label>
+                </div>
+
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-success w-100">Submit</button>
+                </div>
+                </form>
+            </div>
+         </div>
+        </div>
+
+        <div id="partner-list" class="mt-5">
+            <h1 class="text-center">BUSINESS LIST</h1>
+            <div class="cover">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Business Name</th>
+                  <th scope="col">Business Email</th>
+                  <th scope="col">Business Age</th>
+                  <th scope="col">Business Type</th>
+                  <th scope="col">Recommendation</th>
+                  <th scope="col">Improvement</th>
+                  <th scope="col">Comments</th>
+                  <th scope="col" colspan="3">Actions</th>
+                </tr>
+                
+                
+              </thead>
+              <tbody id="table-data">
+                  
+              </tbody>
+          </table>
+          </div>
+          </div>
+
+        <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Edit Profile</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div> 
+                <div class="modal-body bg-secondary">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                    <form action="" id="edit-form">
+                        <div class="mb-3">
+                            <label for="name" class="form-label fw-bold">Edit Business Name</label>
+                            <input type="text" id="editName" class="form-control" placeholder="Enter business name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="formGroupExampleInput2" class="form-label fw-bold">Edit Business Email</label>
+                            <input type="email" id="editEmail" class="form-control" placeholder="Enter business email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="formGroupExampleInput2" class="form-label fw-bold">Edit Business Age</label>
+                            <input type="number" id="editNumber" class="form-control" placeholder="years" name="age" min="1" max="15">
+                        </div>
+                    
+                        <div>
+                            <b><p>Which option best describes your business?</p></b>
+                            <select name="role" id="editDropdown" class="form-input mb-3">
+                                <b><option disabled selected value="">Select business type</option></b>
+                                <option value="Packaging">Packaging</option>
+                                <option value="Branding">Branding</option>
+                                <option value="FMCG">FMCG</option>
+                                <option value="Fashion">Fashion</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    
+                        
+                        <b><p>Would you recommend Pennee to your customers?</p></b>
+                        <div id="radio" class="d-flex flex-column mb-3">
+                            <label for="">
+                                <input type="radio" value="Definitely" name="editRecommend" class="editRadio">
+                                Definitely
+                            </label>
+                    
+                            <label for="">
+                                <input type="radio" value="Maybe" name="editRecommend" class="editRadio">
+                                Maybe
+                            </label>
+                    
+                            <label for="">
+                                <input type="radio" value="not-sure" name="editRecommend" class="editRadio">
+                                Not sure
+                            </label>
+                        </div>
+                    
+                        
+                            <b><p>What would you like to see improved?</p></b>
+                            <div id="checkbox" class="d-flex flex-column mb-2">
+                                <label for="">
+                                    <input type="checkbox" value="Customer Service" name="editImprove">
+                                    Customer Service
+                                </label>
+                        
+                                <label for="">
+                                    <input type="checkbox" value="App Features" name="editImprove">
+                                    App Features
+                                </label>
+                        
+                                <label for="">
+                                    <input type="checkbox" value="Dashboard Features" name="editImprove">
+                                    Dashboard Features
+                                </label>
+                        
+                                <label for="">
+                                    <input type="checkbox" value="Withdrawal time" name="editImprove">
+                                    Delivery system
+                                </label>
+                        
+                                <label for="">
+                                    <input type="checkbox" value="Partner Referral System" name="editImprove">
+                                    Referral System
+                                </label>
+                        
+                                <label for="">
+                                    <input type="checkbox" value="Others" name="editImprove">
+                                    Others
+                                </label>
+                        </div><br>
+                    
+                        <div class="comment">
+                            <b><p>Edit comments</p></b>
+                            <label for="comments">
+                                <textarea name="comment" id="editComments" cols="30" rows="5"
+                                placeholder="Enter your comments here...." class="form-input"></textarea>
+                            </label>
+                        </div><br>
+                    
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success">Update</button>
+                    </div>
+                    </form>
+                    </div>
+                    </div>
+                    </div>
+                </div>     
+                </div>
+         </div>
+        </div>
+        
+        <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div> 
+            
+                <div class="modal-body">
+                   <div class="container">
+                <div class="row align-items-center justify-content-center">
+                <div class="col-md-4 survey-img">
+                    <img src="./image/istockphoto-1225051355-170667a.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="row col-md-8">
+                    <div class="row">
+                    <div class="col">
+                    <h5>Business Name</h5>
+                    <p id="viewName"></p><br>
+                    </div>
+                    <div class="col">
+                    <h5>Business Email</h5>
+                    <p id="viewEmail"></p><br>
+                    </div>
+                    </div>
+            
+                    <div class="row">
+                    <div class="col">
+                    <h5>Business Age</h5>
+                    <p id="viewNumber"></p><br>
+                    </div>
+                    <div class="col">
+                    <h5>Business Type</h5>
+                    <p id="viewType"></p><br>
+                    </div>
+                    </div>
+            
+                    <div class="row">
+                    <div class="col">
+                    <h5>Recommendation</h5>
+                    <p id="viewRecommendation"></p><br>
+                    </div>
+                    <div class="col">
+                    <h5>Improvement</h5>
+                    <p id="viewImprovement"></p><br>
+                    </div>
+                    </div>
+                    <div class="col">
+                    <h5>Comments</h5>
+                    <p id="viewComments"></p>
+                </div>
+                </div>
+                </div>     
+                </div> 
+            </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="./app.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+</html>
